@@ -19,7 +19,7 @@ jobs:
         node-version: 18
 
     - name: Build docker image 
-      run: docker build -t christmknd/age-calculator
+      run: docker build -t christmknd/age-calculator .
 
     - name: Push Docker Image to  Docker Hub
       env:
