@@ -18,8 +18,14 @@ jobs:
       with:
         node-version: 18
 
-    - name: Install dependancies 
-      run: npm install 
+    - name: Build docker image 
+      run: docker build -t christmknd/age-christmknd/age-calculator
 
-    - name: Build App
-      run: npm run build
+    - name: Push Docker Image to  Docker Hub
+      env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+          docker build -t christmknd/age-christmknd/age-calculator .
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker push christmknd/age-christmknd/age-calculator
