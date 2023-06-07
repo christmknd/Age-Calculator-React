@@ -6,6 +6,11 @@ Application qui génère :
 - Le nombre de mois depuis votre naissance
 - Le nombre de jours écoulés depuis votre naissance
 
+## Usage
+
+- Tapez la commande suivante sur votre terminal : bash start.sh
+- Aller sur votre navigateur à cette l'URL : http://localhost:3000/
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
