@@ -3,6 +3,7 @@ services:
   
   react:
     container_name: age-calculator
+    image: age-calculator
     build: ./app
     ports:
       - 3000:3000
