@@ -12,7 +12,7 @@
         name: 
         - docker
         - docker-compose
-        executable: python3-pip
+        executable: pip
 
     - name: Pull code from github
       ansible.builtin.git:
