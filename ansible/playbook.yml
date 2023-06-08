@@ -15,7 +15,6 @@
         clone: true
         update: true
 
-
     - name: Run the docker-compose
       become: true
       command: sh start.sh
