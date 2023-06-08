@@ -1,4 +1,8 @@
 - hosts: ec2
+  gather_facts: false
+  become: true
+  become_user: root
+  
   tasks:
     - name: install pip3
       yum: name=python3-pip state=present 
