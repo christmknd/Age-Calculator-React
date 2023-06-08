@@ -40,4 +40,6 @@ jobs:
         playbook : playbook.yml
         directory: ./ansible
         key: ${{secrets.SSH_PRIVATE_KEY}}
-        inventory: inv.ini
+        inventory: |
+            [ec2]
+            54.147.214.249
