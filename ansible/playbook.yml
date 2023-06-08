@@ -6,7 +6,6 @@
   tasks:
     - name: install pip3
       yum: name=python3-pip state=present 
-      
 
     - name: Pull code from github
       ansible.builtin.git:
