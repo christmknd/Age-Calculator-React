@@ -1,4 +1,4 @@
-- hosts: server
+- hosts: ec2
   tasks:
     - name: install pip3
       apt: name=python3-pip state=present 
