@@ -9,14 +9,14 @@
 
     - name: Pull code from github
       ansible.builtin.git:
-        repo: https://github.com/christmknd/CD-5IW.git
+        repo: https://github.com/christmknd/Age-Calculator-React.git
         dest: ec2-user/Age-Calculator-React
         version: main
         clone: true
         update: true
 
 
-    - name: Pull and run new image
+    - name: Run the docker-compose
       become: true
       community.docker.docker_compose:
         project_src: ec2-user/Age-Calculator-React
