@@ -10,15 +10,17 @@
     - name: Pull code from github
       ansible.builtin.git:
         repo: "git@github.com:christmknd/Age-Calculator-React.git"
-        dest: ~/age-calculator
-        version: "main"
+        dest: ~/Age-Calculator-React
+        version: main
         clone: true
         update: true
+        accept_hostkey: yes
+      become: true
 
     - name: Pull and run new image
       become: true
       community.docker.docker_compose:
-        project_src: ~/age-calculator
+        project_src: ~/Age-Calculator-React
         state: present
         pull: true
         
