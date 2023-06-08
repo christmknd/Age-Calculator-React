@@ -7,13 +7,6 @@
     - name: install pip3
       yum: name=python3-pip state=present 
 
-    - name: Install Docker Module for Python
-      pip:
-        name: 
-        - docker
-        - docker-compose
-        executable: pip
-
     - name: Pull code from github
       ansible.builtin.git:
         repo: https://github.com/christmknd/CD-5IW.git
@@ -26,7 +19,7 @@
     - name: Pull and run new image
       become: true
       community.docker.docker_compose:
-        project_src: ~/Age-Calculator-React
+        project_src: ec2-user/Age-Calculator-React
         state: present
         pull: true
         
