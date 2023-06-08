@@ -9,8 +9,8 @@
 
     - name: Pull code from github
       ansible.builtin.git:
-        repo: "git@github.com:christmknd/Age-Calculator-React.git"
-        dest: ~/Age-Calculator-React
+        repo: https://github.com/christmknd/CD-5IW.git
+        dest: ec2-user/Age-Calculator-React
         version: main
         clone: true
         update: true
