@@ -18,8 +18,7 @@
 
     - name: Run the docker-compose
       become: true
-      community.docker.docker_compose:
-        project_src: ec2-user/Age-Calculator-React
-        state: present
-        pull: true
+      command: sh start.sh
+      args:
+        chdir: Age-Calculator-React
         
