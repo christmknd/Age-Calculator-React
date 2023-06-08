@@ -14,9 +14,7 @@
         version: main
         clone: true
         update: true
-        accept_hostkey: yes
-      become: true
-      
+
 
     - name: Pull and run new image
       become: true
