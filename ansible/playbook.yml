@@ -1,32 +1,26 @@
-- name: Deploy App
-  hosts: ec2
-  remote_user: ubuntu
-  become: true
-
+- hosts: server
   tasks:
-    - name: Install Docker
+    - name: install pip3
+      apt: name=python3-pip state=present 
+      
+    - name: Install Docker  Module for Python
+      pip:
+        name:
+          - docker
+          - docker-compose
+
+    - name: Pull code from github
+      ansible.builtin.git:
+        repo: "git@github.com:christmknd/Age-Calculator-React"
+        dest: ~/age-calculator
+        version: "main"
+        clone: true
+        update: true
+
+    - name: Pull and run new image
       become: true
-      yum:
-        name: docker
+      community.docker.docker_compose:
+        project_src: ~/age-calculator
         state: present
-
-    - name: Start Docker service
-      become: true
-      service:
-        name: docker
-        state: started
-
-    - name: Pull Docker image
-      become: true
-      docker_image:
-        name: christmknd/age-calculator
-        source: pull
-
-    - name: Run Docker container
-      become: true
-      docker_container:
-        name: age-calculator
-        image: christmknd/age-calculator
-        ports:
-          - 3000:3000
-        state: started
+        pull: true
+        

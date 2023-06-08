@@ -34,10 +34,11 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/age-calculator
 
-    - name: Deploy to EC2 with Ansible
-      env:
-        ANSIBLE_HOST_KEY_CHECKING: false
-        EC2_INSTANCE_IP: 54.147.214.249
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      run: |
-        ssh -o StrictHostKeyChecking=no -i <<< "${SSH_PRIVATE_KEY}" ec2-user@$54.147.214.249 "cd app/ansible && ansible-playbook playbook.yml"
+    - name: Run playbook
+      uses: dawidd6/action-ansible-playbook@v2
+      with:
+        playbook : playbook.yml
+        directory: ./ansible
+        key: ${{secrets.SSH_PRIVATE_KEY}}
+        inventory: |
+            [server]
