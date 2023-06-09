@@ -15,9 +15,14 @@
         clone: true
         update: true
 
-    - name: Run the application
+    - name: Change directory to React app
       become: true
-      command: cd app/ && npm start
-      args:
-        chdir: Age-Calculator-React
-        
+      shell: Age-Calculator-React/app
+
+    - name: Run npm install
+      become: true
+      shell: npm install
+
+    - name: Start React app
+      become: true
+      shell: npm start
