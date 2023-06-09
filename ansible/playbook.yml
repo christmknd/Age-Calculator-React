@@ -17,7 +17,7 @@
 
     - name: Run the application
       become: true
-      command: npm start
+      command: cd app/ && npm start
       args:
-        chdir: Age-Calculator-React/app
+        chdir: Age-Calculator-React
         
