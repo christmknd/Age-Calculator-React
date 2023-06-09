@@ -15,9 +15,9 @@
         clone: true
         update: true
 
-    - name: Run the docker-compose
+    - name: Run the application
       become: true
-      command: sh start.sh
+      command: npm start
       args:
-        chdir: Age-Calculator-React
+        chdir: Age-Calculator-React/app
         
