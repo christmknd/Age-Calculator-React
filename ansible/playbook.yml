@@ -17,7 +17,7 @@
 
     - name: Change directory to React app
       become: true
-      shell: Age-Calculator-React/app
+      shell: cd Age-Calculator-React/app
 
     - name: Run npm install
       become: true
