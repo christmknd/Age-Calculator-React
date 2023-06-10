@@ -15,14 +15,6 @@
         clone: true
         update: true
 
-    - name: Change directory to React app
+    - name : Go to the right folder
       become: true
-      shell: cd Age-Calculator-React/app
-
-    - name: Run npm install
-      become: true
-      shell: npm install
-
-    - name: Start React app
-      become: true
-      shell: npm start
+      shell : cd Age-Calculator-React
