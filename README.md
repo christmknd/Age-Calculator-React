@@ -15,6 +15,16 @@ Application qui génère :
 
 - Image docker : https://hub.docker.com/repository/docker/christmknd/age-calculator/general
 
+## Environnement technique
+
+- Langage : Javascript
+- Framework : React
+- Docker
+- Tests unitaires : React Testing Library
+- CI/CD : Github actions
+- Déploiement : Ansible
+- Hebergement cloud : Amazon S3
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
