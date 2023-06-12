@@ -34,7 +34,7 @@ function AgeForm () {
     }  
 
     return (
-        <div>
+        <div data-testid="age-form">
         <form onSubmit={handleSubmit}>
           <label>
           Entrez votre date de naissance : 
