@@ -7,7 +7,7 @@ on:
     branches: ["main"]
 
 jobs:
-  test:
+  unit-testing:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,13 +21,9 @@ jobs:
         node-version:  ${{ matrix.node-version }}
 
     - name: Install dependancies
-      with:
-        context: ./app
       run: npm ci 
 
     - name: Run tests
-      with:
-        context: ./app
       run: npm test
     
     
