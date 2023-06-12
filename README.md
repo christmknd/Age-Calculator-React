@@ -23,7 +23,7 @@ Application qui génère :
 - Tests unitaires : React Testing Library
 - CI/CD : Github actions
 - Déploiement : Ansible
-- Hebergement cloud : Amazon S3
+- Hebergement cloud : Amazon EC2
 
 ## Contributing
 
