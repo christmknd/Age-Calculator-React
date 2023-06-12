@@ -38,14 +38,15 @@ function AgeForm () {
         <form onSubmit={handleSubmit}>
           <label>
           Entrez votre date de naissance : 
-            <input type="date" name="dateNaissance" required />
+            <input type="date" name="dateNaissance" data-testid="dateNaissance" required />
           </label>
           <button type="submit">Calculer</button>
         </form>
 
-        {<p>Vous avez {yearsSinceBirth} ans <br /> 
-        {monthsSinceBirth} mois sont passés depuis le jour de votre naissance <br /> 
-        Il s'est écoulé {daysSinceBirth} jours</p>} 
+        <p data-testid="yearsSinceBirth">{yearsSinceBirth} ans</p>
+        <p data-testid="monthsSinceBirth">{monthsSinceBirth} mois sont passés depuis le jour de votre naissance</p>
+        <p data-testid="daysSinceBirth">Il s'est écoulé {daysSinceBirth} jours</p>
+
       </div>
     )
 }
