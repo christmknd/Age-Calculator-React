@@ -1,15 +1,14 @@
-name : Main CI 
+name: Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
-  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,13 +32,3 @@ jobs:
         context: ./app         
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/age-calculator
-
-    - name: Run playbook
-      uses: dawidd6/action-ansible-playbook@v2
-      with:
-        playbook : playbook.yml
-        directory: ./ansible
-        key: ${{secrets.SSH_PRIVATE_KEY}}
-        inventory: |
-            [ec2]
-            54.147.214.249
